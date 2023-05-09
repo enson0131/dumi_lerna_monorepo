@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "dumi-component": ["src"],
+      "dumi-component/*": ["src/*", "*"]
+    }
+  },
+  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", "packages/bytello-ui/index.ts", "packages/bytello-ui/Foo"]
+}
