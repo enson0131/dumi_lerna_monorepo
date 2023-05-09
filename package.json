@@ -6,9 +6,12 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "init": "yarn && lerna clean && yarn bootstrap",
+    "clean": "lerna clean && yarn workspaces run clean",
+    "bootstrap": "lerna bootstrap",
     "start": "npm run dev",
     "dev": "dumi dev",
-    "build": "father build",
+    "build": "node ./scripts/build.js",
     "build:watch": "father dev",
     "docs:build": "dumi build",
     "prepare": "husky install && dumi setup",
@@ -16,7 +19,8 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "publish": "lerna publish from-package --loglevel=silly --force-publish --yes"
   },
   "authors": [],
   "license": "MIT",
